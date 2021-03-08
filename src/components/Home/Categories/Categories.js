@@ -19,15 +19,15 @@ const Categories = () => {
     const [product,setProduct] = useState([]);
     
     useEffect(()=>{
-        const matchProduct = allProducts.filter(pd=>pd.category===category.toLowerCase())
+        const matchProduct = allProducts.filter(pd=>pd.category===category)
         setProduct(matchProduct);
     },[category])
     return (
         <div>
             <h4>Select Your Category: {category}</h4>
-            <button onClick={()=>setCategory('Laptop')}>Laptop</button>
-            <button onClick={()=>setCategory('Mobile')}>Mobile</button>
-            <button onClick={()=>setCategory('Camera')}>Camera</button>
+            <button onClick={()=>setCategory('laptop')}>Laptop</button>
+            <button onClick={()=>setCategory('mobile')}>Mobile</button>
+            <button onClick={()=>setCategory('camera')}>Camera</button>
 
             {
                 product.map(pd=><CategoryDetails pd={pd}></CategoryDetails>)
